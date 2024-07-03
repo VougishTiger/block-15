@@ -6,21 +6,28 @@ const froYo=prompt(
 //create an array using the info user entered
 const froArray= froYo.split(`,`);
 //create a list of an empty obeject
-const froYoList={}
+const froYoList={};
 //go through each flavor 
-for (let i=0; i<froArray.length;i=i+1){
-//if it doesnt exist then add to the list
+const froFun= () => {
 
-  if (froYoList[froArray[i]] === undefined){
-    froYoList[froArray[i]] = 1;
-    
+
+
+  for (let i=0; i<froArray.length;i=i+1){
+  //if it doesnt exist then add to the list
+
+    if (froYoList[froArray[i]] === undefined){
+      froYoList[froArray[i]] = 1;
+      
+    }
+    else if (froYoList[froArray[i]] !== undefined){
+      froYoList[froArray[i]] += 1;
+  
+    }
   }
-  else if (froYoList[froArray[i]] !== undefined){
-    froYoList[froArray[i]] += 1;
-    console.log(froYoList)
-  }
+  return froYoList;
 }
-
+froFun();
+console.log(Object.values(froYoList))
 //if it exists then add quantity
     
 
